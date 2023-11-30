@@ -1,0 +1,9 @@
+package Comandos;
+
+import Destinatario.Facade;
+
+public class ConsultaProfessor implements IComando{
+	public void Executar(String p1, String p2) {
+		Facade.AcessarSingleton().ConsultaProfessor(Integer.parseInt(p1));
+	}
+}

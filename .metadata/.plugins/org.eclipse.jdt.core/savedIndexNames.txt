@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\gsizi\Desktop\Trabalho Engenharia de Software\.metadata\.plugins\org.eclipse.jdt.core
+2367783050.index
+1865797976.index
+2800777044.index

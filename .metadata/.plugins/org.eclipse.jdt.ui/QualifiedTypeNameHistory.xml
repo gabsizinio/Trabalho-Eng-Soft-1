@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="Facade.DestinatarioFacade"/>
+    <fullyQualifiedTypeName name="Usuario.UsuarioObservador"/>
+    <fullyQualifiedTypeName name="Sistema.Sistema"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="Usuario.Usuario"/>
+    <fullyQualifiedTypeName name="Observador.IObservador"/>
+    <fullyQualifiedTypeName name="ClassesSistema.Emprestimo"/>
+    <fullyQualifiedTypeName name="ClassesSistema.ExemplarLivro"/>
+    <fullyQualifiedTypeName name="ClassesSistema.Fabrica"/>
+    <fullyQualifiedTypeName name="Observador.ObserverManager"/>
+    <fullyQualifiedTypeName name="Observador.Fabrica"/>
+    <fullyQualifiedTypeName name="Usuario.IUsuario"/>
+    <fullyQualifiedTypeName name="ClassesSistema.Livro"/>
+    <fullyQualifiedTypeName name="Verificadores.VerificadorAluno"/>
+    <fullyQualifiedTypeName name="Verificadores.VerificadorEmprestimo"/>
+    <fullyQualifiedTypeName name="Verificadores.FabricaVerificadores"/>
+    <fullyQualifiedTypeName name="Comandos.FabricaComandos"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="Comandos.IComando"/>
+    <fullyQualifiedTypeName name="javax.net.ssl.CertPathTrustManagerParameters"/>
+    <fullyQualifiedTypeName name="Console.Console"/>
+    <fullyQualifiedTypeName name="Usuario.FabricaUsuario"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="ClassesSistema.FabricaClassesSistema"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="Destinatario.Facade"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

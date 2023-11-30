@@ -1,0 +1,22 @@
+package Console;
+
+import Comandos.FabricaComandos;
+import Comandos.IComando;
+
+import java.util.Map;
+import java.util.HashMap;
+
+public class Console {
+	public Console() {
+		Map<String, IComando> Mapa = new HashMap<>();
+		Mapa.put("liv", FabricaComandos.criaConsultaLivro());
+		Mapa.put("ntf", FabricaComandos.criaConsultaProfessor());
+		Mapa.put("usu", FabricaComandos.criaConsultaAluno());
+		Mapa.put("emp", FabricaComandos.criaEmrestar());
+		Mapa.put("dev", FabricaComandos.criaDevolver());
+		Mapa.put("obs", FabricaComandos.criaObservar());
+		Mapa.put("res", FabricaComandos.criaReservar());
+		
+	}
+	
+}
