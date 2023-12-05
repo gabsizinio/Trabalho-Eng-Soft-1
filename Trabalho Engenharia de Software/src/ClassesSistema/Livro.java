@@ -5,7 +5,7 @@ import Usuario.IUsuario;
 import Observador.ObserverManager;
 import Observador.FabricaObservador;
 import Observador.IObservador;
-import Observador.ObserverManager;
+
 
 public class Livro {
 	private int Id;
@@ -69,6 +69,17 @@ public class Livro {
 	
 	public List<Reserva> getReservas(){
 		return this.Reservas;
+	}
+	
+	public boolean removeReserva(IUsuario usuario) {
+		for(int i = 0; i < Reservas.size(); i++) {
+			if(Reservas.get(i).getUsuario() == usuario) {
+				//System.out.println("aqui");
+				Reservas.remove(i);
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public int getNumeroReservas() {

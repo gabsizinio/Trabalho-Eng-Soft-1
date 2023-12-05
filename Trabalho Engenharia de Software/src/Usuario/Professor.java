@@ -73,6 +73,7 @@ public class Professor implements IUsuario, IObservador{
 		for(int i = 0; i < Reservas.size(); i++) {
 			if(Reservas.get(i).getLivro().getTitulo() == livro.getTitulo()) {
 				Reservas.remove(i);
+				livro.removeReserva(this);
 			}
 		}
 	}
@@ -89,6 +90,7 @@ public class Professor implements IUsuario, IObservador{
 	}
 	
 	public boolean Emprestimo(Livro livro) {
+		//System.out.println("hey");
 		if(Verificador.podePegar(this, livro, 0)) {
 			ExemplarLivro exemplar = livro.getExemplarDisponivel();
 			Emprestimo emp = FabricaClassesSistema.criarEmprestimo(this, exemplar, 3);

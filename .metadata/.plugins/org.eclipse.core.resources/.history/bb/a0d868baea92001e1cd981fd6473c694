@@ -1,0 +1,152 @@
+package ClassesSistema;
+import java.util.List;
+import java.util.ArrayList;
+import Usuario.IUsuario;
+import Observador.ObserverManager;
+import Observador.FabricaObservador;
+import Observador.IObservador;
+
+
+public class Livro {
+	private int Id;
+	private String Titulo;
+	private String Editora;
+	private List<String> Autores;
+	private String Edicao;
+	private int AnoDaPublicacao;
+	
+	private ObserverManager Observadores;
+	private List<Reserva> Reservas;
+	private List<ExemplarLivro> Exemplares;
+	
+	public Livro(int Id, String Titulo, String Editora, List<String> Autores, String Edicao, int AnoDaPublicacao) {
+		this.Id = Id;
+		this.Titulo = Titulo;
+		this.Editora = Editora;
+		this.Autores = Autores;
+		this.Edicao = Edicao;
+		this.AnoDaPublicacao = AnoDaPublicacao;
+		
+		Observadores = FabricaObservador.criaObserverManager();
+		this.Exemplares = new ArrayList<>();
+		this.Reservas = new ArrayList<>();
+	}
+	
+	public int getId() {
+		return this.Id;
+	}
+		
+	public void addReserva(Reserva reserva) {
+		Reservas.add(reserva);
+		if(Reservas.size() > 2) {
+			Observadores.Notificar();
+		}
+	}	
+	
+	public String getTitulo() {
+		return this.Titulo;
+	}
+	
+	public String getEditora() {
+		return this.Editora;
+	}
+	
+	public List<String> getAutores(){
+		return this.Autores;
+	}
+	
+	public String getEdicao() {
+		return this.Edicao;
+	}
+	
+	public int getAnoPublicacao() {
+		return this.AnoDaPublicacao;
+	}
+	
+	public List<ExemplarLivro> getExemplares(){
+		return this.Exemplares;
+	}
+	
+	public List<Reserva> getReservas(){
+		return this.Reservas;
+	}
+	
+	public boolean removeReserva(IUsuario usuario) {
+		for(int i = 0; i < Reservas.size(); i++) {
+			if(Reservas.get(i).getUsuario().getNome() == usuario.getNome()) {
+				Reservas.remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public int getNumeroReservas() {
+		return this.Reservas.size();
+	}
+	
+	public void addObserver(IObservador newObserver) {
+		Observadores.addObs(newObserver);
+	}
+	
+	public void addExemplares(ExemplarLivro exemplar) {
+		this.Exemplares.add(exemplar);
+	}
+	
+	public boolean exemplarDisponivel() {
+		for(int i = 0; i < this.Exemplares.size(); i++) {
+			if(this.Exemplares.get(i).getStatus() == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public ExemplarLivro getExemplarDisponivel() {
+		for(int i = 0; i < this.Exemplares.size(); i++) {
+			if(this.Exemplares.get(i).getStatus() == true) {
+				this.Exemplares.get(i).setStatus(false);
+				return this.Exemplares.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public int getNumeroExemplaresDisponiveis() {
+		int num = 0;
+		for(int i = 0; i < Exemplares.size(); i++) {
+			if(Exemplares.get(i).getStatus()) {
+				num++;
+			}
+		}
+		return num;
+	}
+	
+	public String consulta() {
+		String msg = "";
+		
+		msg += "Titulo - " + this.getTitulo();
+		
+		if(this.getReservas().size() > 0) {
+			msg += "\nNumero de Reservas - " + this.getReservas().size();
+			
+			for(int i = 0; i < this.getReservas().size(); i++) {
+				int index = i + 1;
+				msg += "\nReserva " + index + " - " + this.getReservas().get(i).getUsuario().getNome();
+			}
+		}else {
+			msg += "\nNenhuma Reserva.";
+		}
+		for(int i = 0; i < this.getExemplares().size(); i++) {
+			msg += "\nCodigo - " + this.getExemplares().get(i).getId();
+			if(this.getExemplares().get(i).getStatus()) {
+				msg += "\nDisponivel";
+			}else {
+				msg += "\nEmprestado para " + this.getExemplares().get(i).getEmprestimo().getUsario().getNome();
+				msg += "\nEmprestado em " + this.getExemplares().get(i).getEmprestimo().getDataPegou();
+				msg += "\nDevolucao prevista em " + this.getExemplares().get(i).getEmprestimo().getDataDevolver();
+			}
+		}
+		return msg;
+	}
+}

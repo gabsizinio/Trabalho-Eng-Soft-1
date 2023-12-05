@@ -39,6 +39,7 @@ public class VerificadorProf implements VerificadorEmprestimo{
 	public boolean podePegar(IUsuario usuario, Livro livro, int Dias) {
 		if(livro.exemplarDisponivel()) {
 			if(this.Devedor(usuario) == false) {
+				//System.out.println("Aqui");
 				return true;
 			}
 		}

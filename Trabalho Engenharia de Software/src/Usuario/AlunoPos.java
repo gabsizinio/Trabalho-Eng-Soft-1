@@ -67,7 +67,7 @@ public class AlunoPos implements IUsuario{
 		for(int i = 0; i < this.EmprestimosPassados.size(); i++) {
 			msg += "\n" + EmprestimosPassados.get(i).getLivro().getTitulo();
 			msg += "\nData de Emprestimo: " + EmprestimosPassados.get(i).getDataPegou();
-			msg += "\nData de Devolucao: " + EmprestimosPassados.get(i).getDataDevolver();		
+			//msg += "\nData de Devolucao: " + EmprestimosPassados.get(i).getDataDevolver();		
 			if(EmprestimosPassados.get(i).getStatus() == true) {
 				msg += "\nStatus: Corrente";
 			}else {
@@ -88,11 +88,13 @@ public class AlunoPos implements IUsuario{
 		for(int i = 0; i < Reservas.size(); i++) {
 			if(Reservas.get(i).getLivro().getTitulo() == livro.getTitulo()) {
 				Reservas.remove(i);
+				livro.removeReserva(this);
 			}
 		}
 	}
 	
 	public boolean Emprestimo(Livro livro) {
+		//System.out.printf("ddddddd");
 		if(Verificador.podePegar(this, livro, 4)) {
 			ExemplarLivro exemplar = livro.getExemplarDisponivel();
 			Emprestimo emp = FabricaClassesSistema.criarEmprestimo(this, exemplar, 3);

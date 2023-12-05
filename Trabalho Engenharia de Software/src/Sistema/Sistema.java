@@ -37,7 +37,7 @@ public class Sistema {
 		Usuarios.add(FabricaUsuario.criaAlunoGrad(123, "Joao da Silva"));
 		Usuarios.add(FabricaUsuario.criaAlunoPos(456, "Luiz Fernando Rodrigues"));
 		Usuarios.add(FabricaUsuario.criaAlunoGrad(789, "Pedro Paulo"));
-		Usuarios.add(FabricaUsuario.criaAlunoGrad(100, "Carlos Luccena"));
+		Usuarios.add(FabricaUsuario.criaProfessor(100, "Carlos Luccena"));
 		
 		String[] autores = {"Ian Sommerville"};
 		Livro livro = FabricaClassesSistema.criarLivro(100, "Engenharia de Software", "Addison Wesley", Arrays.asList(autores), "Sexta", 2000);

@@ -21,11 +21,11 @@
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="Comandos.IComando"/>
     <fullyQualifiedTypeName name="javax.net.ssl.CertPathTrustManagerParameters"/>
-    <fullyQualifiedTypeName name="Console.Console"/>
     <fullyQualifiedTypeName name="Usuario.FabricaUsuario"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="ClassesSistema.FabricaClassesSistema"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="Destinatario.Facade"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="Console.Console"/>
 </qualifiedTypeNameHistroy>

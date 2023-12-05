@@ -1,9 +1,0 @@
-package Comandos;
-
-import Destinatario.Facade;
-
-public class Sair implements IComando{
-	public void Executar(String p1, String p2) {
-		Facade.AcessarSingleton().Sair();
-	}
-}

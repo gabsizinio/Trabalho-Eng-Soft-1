@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 import ClassesSistema.*;
 import Usuario.IUsuario;
-import Console.Console;
+import Console.Console1;
 
 public class Facade {
 	
@@ -26,7 +26,7 @@ public class Facade {
 	
 	public void Run() {
 		this.aux = true;
-		Console c = new Console();
+		Console1 c = new Console1();
 		Sistema.getBiblioteca().Inicializar();
 		
 		while(this.aux) {
@@ -38,12 +38,12 @@ public class Facade {
 		IUsuario usuario = Sistema.getBiblioteca().getUsuario(CodUsuario);
 		Livro livro = Sistema.getBiblioteca().getLivro(CodLivro);
 		
-		//Pq não foi possível
+		//Pq nao foi possível
 		boolean var = usuario.Emprestimo(livro);
 		if(var == true) {
-			return "Sucesso, você (" + usuario.getNome() + ") alugou " + livro.getTitulo();
+			return "Sucesso, voce (" + usuario.getNome() + ") alugou " + livro.getTitulo();
 		}
-		return usuario.getNome() + " não foi possível alugar " + livro.getTitulo();
+		return usuario.getNome() + " nao foi possível alugar " + livro.getTitulo();
 	}
 	
 	public String Devolver(int CodUsuario, int CodLivro) {
@@ -94,9 +94,9 @@ public class Facade {
 		String msg;
 		
 		if(var) {
-			msg = "Senhor(a), " + usuario.getNome() + " o livro " + livro.getTitulo() + " foi reservado.\n";
+			msg = "Senhor(a), " + usuario.getNome() + " o livro " + livro.getTitulo() + " foi reservado.";
 		}else {
-			msg = "Senhor(a), " + usuario.getNome() + " nao foi possivel reservar o livro " + livro.getTitulo() + "\n";
+			msg = "Senhor(a), " + usuario.getNome() + " nao foi possivel reservar o livro " + livro.getTitulo();
 		}
 		return msg;
 	}

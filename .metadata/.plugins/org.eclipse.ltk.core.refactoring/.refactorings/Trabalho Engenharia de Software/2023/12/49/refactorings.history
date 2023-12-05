@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Console.Console&apos; to &apos;Console1&apos;&#x0D;&#x0A;- Original project: &apos;Trabalho Engenharia de Software&apos;&#x0D;&#x0A;- Original element: &apos;Console.Console&apos;&#x0D;&#x0A;- Renamed element: &apos;Console.Console1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Console&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Console{Console.java[Console" matchStrategy="1" name="Console1" qualified="false" references="true" similarDeclarations="false" stamp="1701731789813" textual="false" version="1.0"/>
+</session>

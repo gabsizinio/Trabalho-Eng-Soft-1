@@ -9,8 +9,8 @@ import Usuario.IUsuario;
 public class VerificadorAluno implements VerificadorEmprestimo{
 	
 	public boolean TemReserva(IUsuario usuario, Livro livro) {
-		for(int i = 0; i < usuario.getEmprestimos().size(); i++) {
-			if(usuario.getEmprestimos().get(i).getLivro().getTitulo() == livro.getTitulo()) {
+		for(int i = 0; i < usuario.getReservas().size(); i++) {
+			if(usuario.getReservas().get(i).getLivro() == livro) {
 				return true;
 			}
 		}
